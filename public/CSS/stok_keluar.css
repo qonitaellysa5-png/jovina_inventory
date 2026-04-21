@@ -1,0 +1,76 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.container-stock {
+    padding: 20px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-stock h2 {
+    font-size: 1.7rem;
+    color: #333;
+}
+
+.tambah-btn {
+    background: #00BFA6;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.table-stok {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-stok th,
+.table-stok td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table-stok th {
+    background: #FFC96A;
+    color: #333;
+    font-weight: 600;
+}
+
+.btn.edit {
+    background: #00BFA6;
+    color: #fff;
+    padding: 6px 9px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.delete {
+    background: #EF4444;
+    color: #fff;
+    padding: 6px 9px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}

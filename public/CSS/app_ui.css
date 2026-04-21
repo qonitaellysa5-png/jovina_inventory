@@ -1,0 +1,208 @@
+:root {
+    --bg: #f3f3f3;
+    --card: #fff;
+    --text: #222;
+    --muted: #777;
+    --sb1: #3a2b2d;
+    --sb2: #2d2426;
+    --sbText: #eee;
+    --cream: #e8c58c; /* topbar */
+    --cream2: #d9b476;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* shell */
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* sidebar */
+.sb {
+    width: 260px;
+    background: linear-gradient(180deg, var(--sb1), var(--sb2));
+    color: var(--sbText);
+    padding: 18px 14px;
+    position: fixed;
+    height: 100vh;
+}
+
+.sb-logo {
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    opacity: .95;
+}
+
+.sb-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 10px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, .10);
+    margin-bottom: 10px;
+}
+
+.sb-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sb-avatar-icon {
+    font-size: 18px;
+}
+
+.sb-profile-meta {
+    line-height: 1.2;
+}
+
+.sb-name {
+    font-weight: 700;
+}
+
+.sb-status {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .75);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.sb-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #25e17a;
+    display: inline-block;
+}
+
+.sb-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.sb-item {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, .90);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sb-item:hover {
+    background: rgba(255, 255, 255, .08);
+}
+
+.sb-item.active {
+    background: rgba(232, 197, 140, .18);
+    border-left: 3px solid var(--cream2);
+}
+
+/* main */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 260px; /* memberi ruang untuk sidebar */
+}
+
+/* topbar */
+.topbar {
+    height: 72px;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+
+.topbar-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: .2px;
+}
+
+.topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .35);
+    border: 1px solid rgba(0, 0, 0, .08);
+    color: #1d1d1d;
+    font-weight: 600;
+}
+
+.topbar-user-ico {
+    opacity: .85;
+}
+
+/* page body */
+.page {
+    padding: 18px 26px;
+}
+
+.table-container {
+    margin-top: 20px;
+    background: var(--card);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: var(--cream);
+    color: white;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+button.edit-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
