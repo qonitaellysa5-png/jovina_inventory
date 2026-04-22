@@ -1,27 +1,42 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
-use Illuminate\Contracts\Debug\ExceptionHandler;
+namespace App\Http;
 
-$app = new Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
-);
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
-$app->singleton(
-    Kernel::class,
-    App\Http\Kernel::class
-);
+class Kernel extends HttpKernel
+{
+    /**
+     * Global HTTP middleware
+     */
+    protected $middleware = [
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+    ];
 
-$app->singleton(
-    ConsoleKernel::class,
-    App\Console\Kernel::class
-);
+    /**
+     * Route middleware groups
+     */
+    protected $middlewareGroups = [
+        'web' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
 
-$app->singleton(
-    ExceptionHandler::class,
-    App\Exceptions\Handler::class
-);
+        'api' => [
+            'throttle:api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+    ];
 
-return $app;
+    /**
+     * Route middleware
+     */
+    protected $routeMiddleware = [
+        'auth' => \App\Http\Middleware\Authenticate::class,
+        'admin' => \App\Http\Middlewaere\CheckAdmin::class,
+    ];
+}
