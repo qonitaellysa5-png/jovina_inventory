@@ -11,15 +11,13 @@ return new class extends Migration
         Schema::create('mutasi', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('barang_id')->constrained('barang')
+            $table->foreignId('barang_id')->references('id')->on('barang')->onDelete('restrict')->onUpdate('cascade');
+
+            $table->foreignId('gudang_asal_id')->constrained('gudang', 'id_gudang')
                 ->cascadeOnUpdate()
                 ->restrictOnDelete();
 
-            $table->foreignId('gudang_asal_id')->constrained('gudang')
-                ->cascadeOnUpdate()
-                ->restrictOnDelete();
-
-            $table->foreignId('gudang_tujuan_id')->constrained('gudang')
+            $table->foreignId('gudang_tujuan_id')->constrained('gudang', 'id_gudang')
                 ->cascadeOnUpdate()
                 ->restrictOnDelete();
 

@@ -91,14 +91,39 @@
         <i class="fa fa-home"></i> Dashboard
     </a>
 
-    <a href="{{ route('stok-masuk.index') }}"
-       class="{{ request()->routeIs('stok-masuk.index') ? 'active' : '' }}">
+    <a href="{{ route('data-barang') }}" 
+        class="{{ request()->routeIs('data-barang') ? 'active' : '' }}">
+            <i class="fa fa-box"></i> Data Barang
+    </a>
+
+    <a href="{{ route('stok-masuk') }}"
+       class="{{ request()->routeIs('stok-masuk') ? 'active' : '' }}">
         <i class="fa fa-arrow-down"></i> Stok Masuk
     </a>
 
-    <a href="{{ route('stok-keluar.index') }}"
-       class="{{ request()->routeIs('stok-keluar.index') ? 'active' : '' }}">
+    <a href="{{ route('stok-keluar') }}"
+       class="{{ request()->routeIs('stok-keluar') ? 'active' : '' }}">
         <i class="fa fa-arrow-up"></i> Stok Keluar
+    </a>
+
+    <a href="{{ route('retur') }}"
+       class="{{ request()->routeIs('retur') ? 'active' : '' }}">
+        <i class="fa fa-arrow-up"></i> Retur
+    </a>
+
+    <a href="{{ route('mutasi') }}"
+       class="{{ request()->routeIs('mutasi') ? 'active' : '' }}">
+        <i class="fa fa-arrow-up"></i> Mutasi
+    </a>
+
+    <a href="{{ route('gudang') }}"
+       class="{{ request()->routeIs('gudang') ? 'active' : '' }}">
+        <i class="fa fa-arrow-up"></i> Gudang
+    </a>
+    
+    <a href="{{ route('payment') }}"
+       class="{{ request()->routeIs('payment') ? 'active' : '' }}">
+        <i class="fa fa-credit-card"></i> Payment
     </a>
 
     <a href="{{ route('logout') }}"
@@ -115,6 +140,10 @@
 <div class="content">
     @yield('content')
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+@stack('scripts')
 
 </body>
 </html>

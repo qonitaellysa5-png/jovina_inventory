@@ -100,8 +100,12 @@ class AuthController extends Controller
             ->first();
 
         if (!$admin) {
-            return back()->with('error', 'Email tidak ditemukan');
+            Session::put('admin_login', true);
+            Session::put('admin', $admin);
+
+            return redirect()->route('dashboard');
         }
+        return back()->with('error', 'Email atau password salah');
 
         DB::table('admin')
             ->where('email', $request->email)

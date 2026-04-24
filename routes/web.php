@@ -9,6 +9,7 @@ use App\Http\Controllers\StokKeluarController;
 use App\Http\Controllers\ReturController;
 use App\Http\Controllers\MutasiController;
 use App\Http\Controllers\GudangController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +113,10 @@ Route::middleware('checkAdmin')->group(function () {
     Route::get('/gudang/penjualan', [GudangController::class, 'barangPenjualan'])->name('gudang.penjualan');
     Route::get('/gudang/rusak', [GudangController::class, 'barangRusak'])->name('gudang.rusak');
     Route::get('/gudang/retur', [GudangController::class, 'barangRetur'])->name('gudang.retur');
+
+    // ================= PAYMENT =================
+    Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+    Route::post('/payment/process', [App\Http\Controllers\PaymentController::class, 'process'])->name('payment.process');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

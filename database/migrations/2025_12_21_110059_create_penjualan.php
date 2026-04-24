@@ -23,7 +23,7 @@ return new class extends Migration
     $table->text('keterangan')->nullable();
     $table->timestamps();
 
-    $table->foreign('id_barang')->references('id_barang')->on('barang')->cascadeOnDelete();
+    $table->foreign('id_barang')->references('id')->on('barang')->onDelete('cascade');
     $table->foreign('id_pelanggan')->references('id_pelanggan')->on('pelanggan')->cascadeOnDelete();
     $table->foreign('id_pengiriman')->references('id_pengiriman')->on('pengiriman')->cascadeOnDelete();
 });

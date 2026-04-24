@@ -5,11 +5,11 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 
-class admin extends Model
+class Admin extends Model
 {
     protected $table ='admin';
     protected $primaryKey ='id_admin';
-    public $timetamps = false;
+    public $timestamps = false;
     protected $fillable = [
         'nama_admin',
         'email',
@@ -19,7 +19,7 @@ class admin extends Model
 
     public function barang()
     {
-        return $this->hasMany(barang::class, 'id_admin');
+        return $this->hasMany(Barang::class, 'id_admin');
     }
 
 }

@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('gudang', function (Blueprint $table) {
-            $table->id(); // id
+            $table->id('id_gudang');
             $table->string('nama', 50)->unique(); // Gudang Masuk, Penjualan, Rusak, Retur
             $table->timestamps();
         });

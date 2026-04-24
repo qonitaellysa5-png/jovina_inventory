@@ -20,6 +20,6 @@ class Barang extends Model
 
     public function gudang()
     {
-        return $this->belongsTo(Gudang::class);
+        return $this->belongsTo(Gudang::class, 'id_gudang');
     }
 }

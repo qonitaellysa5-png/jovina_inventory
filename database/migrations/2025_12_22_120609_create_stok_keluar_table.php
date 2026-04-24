@@ -20,9 +20,9 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->foreign('id_barang')
-                ->references('id_barang')
+                ->references('id')
                 ->on('barang')
-                ->cascadeOnDelete();
+                ->OnDelete('cascade');
 
             $table->index('tanggal');
             $table->index('gudang');

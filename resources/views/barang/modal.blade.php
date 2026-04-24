@@ -154,8 +154,8 @@
                 <div class="modal-body">
                     <div class="row g-4">
                         <div class="col-6">
-                            <label>Kode<span class="req">*</span></label>
-                            <input type="text" name="kode" class="form-control" required>
+                            <label>Kode Barang<span class="req">*</span></label>
+                            <input type="text" name="kode" class="form-control" placeholder="Contoh: BRG001" required>
 
                             <div class="mt-3">
                                 <label>Jenis Barang<span class="req">*</span></label>
@@ -180,15 +180,15 @@
 
                         <div class="col-6">
                             <label>Nama Barang<span class="req">*</span></label>
-                            <input type="text" name="nama" class="form-control" required>
+                            <input type="text" name="nama" class="form-control" placeholder="Contoh: Blonde 14" required>
 
                             <div class="mt-3">
                                 <label>Satuan<span class="req">*</span></label>
-                                <input type="text" name="satuan" class="form-control" required>
+                                <input type="text" name="satuan" class="form-control" placeholder="Pcs/Box" required>
                             </div>
 
                             <div class="mt-3">
-                                <label>Stok dapat dijual<span class="req">*</span></label>
+                                <label>Stok Dapat Dijual<span class="req">*</span></label>
                                 <input type="number" name="stok_dapat_dijual" class="form-control" min="0" required>
                             </div>
                         </div>
@@ -263,27 +263,29 @@
                 <div class="modal-body">
                     <div class="row g-4">
                         <div class="col-6">
-                            <label>Kode</label>
-                            <input type="text" name="kode" class="form-control" value="{{ $b->kode }}" required>
+                            <label>Kode Barang<span class="rep">*</span></label>
+                            <input type="text" name="kode" class="form-control" placeholder="Contoh: BRG001" required>
 
                             <div class="mt-3">
-                                <label>Jenis Barang</label>
-                                <input type="text" name="jenis" class="form-control" value="{{ $b->jenis }}" required>
+                                <label>Nama Barang<span class="req">*</span></label>
+                                <input type="text" name="kode" class="form-control" placeholder="Contoh: Blonde 14" required>
+
+                            <div class="mt-3">
+                                <label>Jenis Barang<span class="req">*</span></label>
+                                <input type="text" name="jenis" class="form-control" required>
                             </div>
 
                             <div class="mt-3">
-                                <label>Stok Unit</label>
-                                <input type="number" name="stok_unit" class="form-control" min="0" value="{{ $b->stok_unit }}" required>
+                                <label>Stok Unit<span class="req">*</span></label>
+                                <input type="number" name="stok_unit" class="form-control" min="0" required>
                             </div>
 
                             <div class="mt-3">
-                                <label>Gudang</label>
+                                <label>Gudang<span class="req">*</span></label>
                                 <select name="gudang_id" class="form-control" required>
                                     <option value="">-- Pilih Gudang --</option>
                                     @foreach($gudangs as $g)
-                                        <option value="{{ $g->id }}" {{ $b->gudang_id == $g->id ? 'selected' : '' }}>
-                                            {{ $g->nama }}
-                                        </option>
+                                        <option value="{{ $g->id }}">{{ $g->nama }}</option
                                     @endforeach
                                 </select>
                             </div>

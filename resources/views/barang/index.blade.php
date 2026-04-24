@@ -285,8 +285,8 @@
                         @php $idx = $barangs->firstItem() + $i; @endphp
                         <tr>
                             <td class="col-no" style="text-align:center;">{{ $idx }}</td>
-                            <td class="col-kode" style="text-align:center;">{{ $b->kode }}</td>
-                            <td class="col-nama">{{ $b->nama }}</td>
+                            <td class="col-kode">{{ $b->kode_barang }}</td>
+                            <td class="col-nama">{{ $b->nama_barang }}</td>
                             <td class="col-jenis" style="text-align:center;">{{ $b->jenis }}</td>
                             <td class="col-satuan" style="text-align:center;">{{ $b->satuan }}</td>
                             <td class="col-stok_unit" style="text-align:center;">{{ $b->stok_unit }} {{ $b->satuan }}</td>
