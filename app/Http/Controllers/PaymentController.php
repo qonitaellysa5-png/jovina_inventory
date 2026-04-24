@@ -23,23 +23,28 @@ class PaymentController extends Controller
 
         $params = [
             'transaction_details' => [
-                'order_id' => 'JOVINA-'.rand(),
-                'gross_amount' => 299900
+                'order_id' => 'INV-' . time(),
+                'gross_amount' => 50000
             ],
 
-            'customer_detailes' => [
+            'customer_details' => [
                 'first_name' => 'Pelanggan Jovina',
                 'email' => 'pelanggan@example.com',
             ]
         ];
 
-       try {
+        try {
             $snapToken = Snap::getSnapToken($params);
+
             return response()->json([
                 'snap_token' => $snapToken
             ]);
+
         } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
+
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
         }
     }
 }
