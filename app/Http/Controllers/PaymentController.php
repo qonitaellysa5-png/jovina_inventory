@@ -10,30 +10,30 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $total = 299900;
-        return view('payment', compact('total'));
+        return view('payment');
     }
 
     public function process()
     {
-        Config::$serverKey = env('MIDTRANS_SERVER_KEY');
-        Config::$isProduction = false;
-        Config::$isSanitized = true;
-        Config::$is3ds = true;
-
-        $params = [
-            'transaction_details' => [
-                'order_id' => 'INV-' . time(),
-                'gross_amount' => 50000
-            ],
-
-            'customer_details' => [
-                'first_name' => 'Pelanggan Jovina',
-                'email' => 'pelanggan@example.com',
-            ]
-        ];
-
         try {
+
+            Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+            Config::$isProduction = false;
+            Config::$isSanitized = true;
+            Config::$is3ds = true;
+
+            $params = [
+                'transaction_details' => [
+                    'order_id' => 'INV-' . time(),
+                    'gross_amount' => 50000
+                ],
+
+                'customer_details' => [
+                    'first_name' => 'Qonita',
+                    'email' => 'test@mail.com'
+                ]
+            ];
+
             $snapToken = Snap::getSnapToken($params);
 
             return response()->json([

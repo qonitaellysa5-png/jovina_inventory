@@ -79,7 +79,8 @@
     <div class="brand">JOVINA</div>
 
     <div class="profile">
-        <img src="{{ asset('images/profil.jpg') }}">
+        style="width:40px; height:40px;">
+        <i class="fa fa-user"></i>
         <div>
             <strong>Dian</strong><br>
             <small>Admin</small>
